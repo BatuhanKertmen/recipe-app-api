@@ -8,7 +8,6 @@ jobs:
     name: Test and Lint
     runs-on: Ubuntu-20.04
     steps:
-
       - name: Test
         env:
           DOCKERHUB_USER: ${{secrets.DOCKERHUB_USER }}
