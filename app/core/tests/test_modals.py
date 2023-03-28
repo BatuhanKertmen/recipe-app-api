@@ -26,3 +26,7 @@ class ModalTests(TestCase):
         for email, expected in sample:
             user = get_user_model().objects.create_user(email=email)
             self.assertEqual(user.email, expected)
+
+    def test_new_user_without_email_raises_error(self):
+        with self.assertRaises(ValueError):
+            get_user_model().objects.create_user("", "sample")
