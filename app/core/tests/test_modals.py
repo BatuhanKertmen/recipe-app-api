@@ -30,3 +30,12 @@ class ModalTests(TestCase):
     def test_new_user_without_email_raises_error(self):
         with self.assertRaises(ValueError):
             get_user_model().objects.create_user("", "sample")
+
+    def test_create_super_user(self):
+        user = get_user_model().objects.create_superuser(
+            "test@example.com",
+            "test123"
+        )
+
+        self.assertTrue(user.is_superuser)
+        self.assertTrue(user.is_staff)
