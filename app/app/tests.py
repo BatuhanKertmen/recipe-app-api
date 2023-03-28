@@ -10,5 +10,3 @@ class CalcTests(SimpleTestCase):
     def test_diff_numbers(self):
         res = calc.subtract(6, 5)
         self.assertEqual(res, 1)
-
-
