@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 
 class ModalTests(TestCase):
 
-    def test_crete_user_with_email_successfull(self):
+    def test_create_user_with_email_successfull(self):
         email = "test@example.com"
         password = "testpass123"
         user = get_user_model().objects.create_user(
