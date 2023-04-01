@@ -44,7 +44,8 @@ class ModalTests(TestCase):
         self.assertTrue(user.is_staff)
 
     def test_create_recipe(self):
-        user = get_user_model().objects.create_user("test@example.com", "testpass123")
+        user = get_user_model().objects\
+            .create_user("test@example.com", "testpass123")
         recipe = models.Recipe.objects.create(
             user=user,
             title="sample recipe name",
@@ -54,5 +55,3 @@ class ModalTests(TestCase):
         )
 
         self.assertEqual(str(recipe), recipe.title)
-
-
