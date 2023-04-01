@@ -3,7 +3,7 @@ from django.db import models
 from django.contrib.auth.models import (
     AbstractBaseUser,
     BaseUserManager,
-    PermissionsMixin
+    PermissionsMixin,
 )
 
 
@@ -40,11 +40,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = "email"
 
 
-class RecipeManager:
-    def create_recipe(self, **kwargs):
-        return
-
-
 class Recipe(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
@@ -60,5 +55,3 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.title
-
-    objects = RecipeManager()
